@@ -163,8 +163,9 @@ color:green;
        
         rs=st.executeQuery();
         
-       
+ 			int c=0;      
         	while(rs.next()){
+        		c=1;
         		 String name =rs.getString("Student_Name");
             	        String roll = rs.getString("Roll_Number");
             	        String dept = rs.getString("Department");
@@ -177,7 +178,10 @@ color:green;
             
           
         		}         
-        	
+        	if(c==0)
+        	{
+        		out.println( "<tr><td>"+ "-" +"</td><td>" + "-" + "</td><td>" + "-" + "</td><td>" +"-"+ "</td><td>" +"-" + "</td><td>" +"-"+"</td><td>" +"-"+"</td><td>" +"-"+ "</td></tr>");
+        	}
             
         	
  			

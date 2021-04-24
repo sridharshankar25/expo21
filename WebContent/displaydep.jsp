@@ -31,7 +31,7 @@ function goFurther(){
 	
 	<style>
 	body {
-     background: url('https://c1.wallpaperflare.com/preview/451/968/45/water-pink-background-soothing.jpg') fixed;
+     background: url('https://ak.picdn.net/shutterstock/videos/11534150/thumb/1.jpg') fixed;
     background-size: cover;
 }
 
@@ -86,7 +86,7 @@ input[disabled]
    <div class="container">
             <form class="form-horizontal" role="form" action="displaydepfinal.jsp" method="get">
                 <h2>Display Details </h2>
-                <br><br>
+                
                 
                 
        
@@ -101,10 +101,10 @@ input[disabled]
 							<option value="MECH">MECHANICAL ENGINEERING</option>
 							<option value="MTS">MECHATRONICS ENGINEERING</option>
 							<option value="IT">INFORMATION TECHNOLOGY</option>
-							<option value="CSE">COMPUTER SCIENCE and ENGINEERING</option>
-							<option value="ECE">ELECTRONICS and COMMUNICATION ENGINEERING</option>
-							<option value="EEE">ELECTRICAL and ELECTRONICS ENGINEERING</option>
-							<option value="EIE">ELECTRONICS and INSTRUMENTATION ENGINEERING</option>
+							<option value="CSE">COMPUTER SCIENCE & ENGINEERING</option>
+							<option value="ECE">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+							<option value="EEE">ELECTRICAL & ELECTRONICS ENGINEERING</option>
+							<option value="EIE">ELECTRONICS & INSTRUMENTATION ENGINEERING</option>
 							<option value="CIVIL">CIVIL ENGINEERING</option>
 							<option value="CHEM">CHEMICAL ENGINEERING</option>
 							<option value="FT">FOOD TECHNOLOGY</option>
@@ -116,10 +116,9 @@ input[disabled]
                 
                 
                 
-               <br><br>
+              
                   
-                  <br><br>
-                  
+                  <br>
                   
                   <div class="card text-center">
             <div class="card-header"><h3>Select the field to Display !!</h3></div>

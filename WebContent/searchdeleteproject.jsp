@@ -113,7 +113,7 @@
                                <a class="nav-link" href="delete.jsp" style = "color: white;">EXTRA-CURRICULAR</a>
                            </li>
                            <li class="nav-item">
-                               <a class="nav-link" href="#" style = "color: white;">INFORMATION</a>
+                               <a class="nav-link" href="display.jsp" style = "color: white;">INFORMATION</a>
                            </li>
                        </ul>
                        

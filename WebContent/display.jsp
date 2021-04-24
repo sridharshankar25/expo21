@@ -18,65 +18,7 @@ String st1=null;
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script>
-function copyText()
-{
-    var TextValue = document.getElementById("username").value;
-    var syear = TextValue.substr(0,2);
-    var iyear = parseInt(syear);
-    var dept = TextValue.substr(2,3);
-    var sdept = dept.toLowerCase();
-    var snum = TextValue.substr(5,3);
-    var inum = parseInt(snum);
-    var fl = 0;
-    var fg = 0;
-    var deptarray = ["csr","csl","eer","eel","eir","eil","itr","itl","eer","eel"]; // sample departments
-    var discontinue = [[102,202,302],[255,265,275],[101,201,301],[233,243,253]]; //sample discontinued rollnumbers
-    if (iyear == 18 || iyear == 17)
-    {
-        for(i in deptarray)
-        {
-            var dept = deptarray[i];
-            var res = sdept.localeCompare(dept);
-            if(res == 0)
-            {   
-                fg = 1;
-                var index = i;
-            }    
-        }
-        if (fg == 1)
-        {
-            var arr = discontinue[index];
-            for (j in arr)
-            {
-                var resnum = arr[j];
-                if(resnum == inum)
-                {
-                    fl = 1;
-                }
-            }
-            if(fl == 1)
-            {
-                alert("Discontinued rollno");
-            }
-            else
-            {    
-                alert("valid rollno");
-            }
-        }
-        else
-        {
-            alert("Dept data unavailable");
-        }
-        
-    }
-    else
-    {
-        alert("Year Data Unavailable");
-    }
-    
-}
-</script>
+
 
     <title>Student Details</title>
 	
@@ -193,14 +135,14 @@ font-family:Tekton Pro;
                                <a class="nav-link" href="delete.jsp" style = "color: white;">EXTRA-CURRICULAR</a>
                            </li>
                            <li class="nav-item">
-                               <a class="nav-link" href="#" style = "color: white;">INFORMATION</a>
+                               <a class="nav-link" href="display.jsp" style = "color: white;">INFORMATION</a>
                            </li>
                        </ul>
                        
                        
                          <form class="form-inline " action="Loginsignup">
                          <span style="color: white; margin-right : 50px;">Welcome ${name}!!</span>
-               <button class="btn btn-success my-2 my-sm-0" type="submit" name="login" value="logout">LOGOUT</button>
+               			
             
             </form>
               
@@ -282,8 +224,20 @@ font-family:Tekton Pro;
 	     <div class="mydata">
 	  <br>
 	  
-	     <%
-	      
+	    
+	        <h3>Paper Details</h3><br>
+			<table name="myTableData"  border="1" cellpadding="2">
+			<tr>
+			<th>S.No</th>
+			<th>Paper Name</th>
+<th>Event Name</th>
+<th>Presented Place</th>
+<th>Event Date</th>
+<th>Prize Won</th>
+</tr>
+	        
+	        <%
+	 int c=0;
     try
     {
     	Class.forName("com.mysql.jdbc.Driver");  
@@ -298,10 +252,9 @@ font-family:Tekton Pro;
         rs=st.executeQuery();
         
         int i=1;
-        int k=0;
         	while(rs.next()){
         		
-        		
+        		c=1;
         		  String name =rs.getString("Student_Name");
             	        String roll = rs.getString("Roll_Number");
             	        String dept = rs.getString("Department");
@@ -310,28 +263,20 @@ font-family:Tekton Pro;
             	        String presentedplace= rs.getString("Presented_Place");
             	        String eventdate= rs.getString("Event_Date");
             	        String prize= rs.getString("Prize_Won");
-            	        k++;
             	        
-            	        if(k>0) break;
-            	        %>
-            	        <h3>Paper Details</h3><br>
-	  					<table name="myTableData"  border="1" cellpadding="2">
-	     				<tr>
-	     				<th>S.No</th>
-	  		 			<th>Paper Name</th>
-	          <th>Event Name</th>
-	  		 <th>Presented Place</th>
-	          <th>Event Date</th>
-	  		 <th>Prize Won</th>
-	      </tr>
             	        
-            	        <%
             	        
+
             	        
         		out.println( "<tr><td>"+ i +"</td><td>" + papername + "</td><td>" + eventname + "</td><td>" + presentedplace + "</td><td>" + eventdate + "</td><td>" + prize + "</td></tr>");
             	i++;
           
-        		}         
+        		} 
+        	
+        	if(c == 0)
+        	{
+        		out.println( "<tr><td>"+ "-" +"</td><td>" + "-" + "</td><td>" + "-" + "</td><td>" +"-"+ "</td><td>" +"-" + "</td><td>" +"-"+ "</td></tr>");
+        	}
         	
             
         	
@@ -384,9 +329,10 @@ font-family:Tekton Pro;
  		
        
         rs=st.executeQuery();
-        
+        	c=0;
        		int i=1;
         	while(rs.next()){
+        		c=1;
         		 String name =rs.getString("Student_Name");
             	        String roll = rs.getString("Roll_Number");
             	        String dept = rs.getString("Department");
@@ -399,7 +345,10 @@ font-family:Tekton Pro;
         		out.println( "<tr><td>"+ i +"</td><td>" + projectname + "</td><td>" + eventname + "</td><td>" + presentedplace + "</td><td>" + eventdate + "</td><td>" + prize + "</td></tr>");
           		i++;
         		}         
-        	
+        	if(c == 0)
+        	{
+        		out.println( "<tr><td>"+ "-" +"</td><td>" + "-" + "</td><td>" + "-" + "</td><td>" +"-"+ "</td><td>" +"-" + "</td><td>" +"-"+ "</td></tr>");
+        	}
             
         	
  			
@@ -450,9 +399,10 @@ font-family:Tekton Pro;
  		
        
         rs=st.executeQuery();
-        
+        	c=0;
        		int i=1;
         	while(rs.next()){
+        		c=1;
         		 String name =rs.getString("Student_Name");
             	        String roll = rs.getString("Roll_Number");
             	        String dept = rs.getString("Department");
@@ -466,7 +416,10 @@ font-family:Tekton Pro;
         		out.println( "<tr><td>"+ i +"</td><td>" + extraname + "</td><td>" + eventname + "</td><td>" + eventplace + "</td><td>" + eventdate + "</td><td>" + prize + "</td></tr>");
           		i++;
         		}         
-        	
+        	if(c == 0)
+        	{
+        		out.println( "<tr><td>"+ "-" +"</td><td>" + "-" + "</td><td>" + "-" + "</td><td>" +"-"+ "</td><td>" +"-" + "</td><td>" +"-"+ "</td></tr>");
+        	}
             
         	
  			

@@ -7,21 +7,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-	crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
 <link rel="stylesheet" href="/style.css">
 <title>WELCOME</title>
 <style>
@@ -44,62 +36,62 @@
 	color: #a04000;
 }
 
-  .navbar
-        {
-            font-family:verdana;
-            font-size:Medium;
-            background-color:rgba(0,0,0,0.4);
-            
-        }
-        li{
-        margin-right: 50px;}
+.navbar {
+	font-family: verdana;
+	font-size: Medium;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+li {
+	margin-right: 50px;
+}
 </style>
 <title>Insert title here</title>
 </head>
-<body class="bo"  background="https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg">
-	
-<%
+<body class="bo"
+	background="https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg">
+
+	<%
 		if (session.getAttribute("name") == null) {
 			request.getRequestDispatcher("login.jsp").include(request, response);
 		}
 	 else { %>
-	 
-	<nav class="navbar navbar-expand-sm navbar-light transparent ">
- <img  href="index.jsp" style = "color: white; height: 40px; width:35px;" src="https://nptel.ac.in/content/college_assets/college_logo/781_logo.jpg">
 
- <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.jsp" role="button" style = "color: white;">HOME</a>
+	<nav class="navbar navbar-expand-sm navbar-light transparent "> <img
+		href="index.jsp" style="color: white; height: 40px; width: 35px;"
+		src="https://nptel.ac.in/content/college_assets/college_logo/781_logo.jpg">
+
+	<ul class="navbar-nav mx-auto">
+		<li class="nav-item"><a class="nav-link" href="index.jsp"
+			role="button" style="color: white;">HOME</a></li>
+		<li class="nav-item"><a class="nav-link" href="add.jsp"
+			role="button" style="color: white;">PROJECT </a></li>
+		<li class="nav-item"><a class="nav-link" href="update.jsp"
+			style="color: white;">PAPER</a></li>
+		<li class="nav-item"><a class="nav-link" href="delete.jsp"
+			style="color: white;">EXTRA-CURRICULAR</a></li>
+		<li class="nav-item">
+                    <a class="nav-link" href="display.jsp" style = "color: white;">INFORMATION</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="add.jsp" role="button" style = "color: white;">PROJECT </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="update.jsp" style = "color: white;">PAPER</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="delete.jsp" style = "color: white;">EXTRA-CURRICULAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style = "color: white;">INFORMATION</a>
-                </li>
-            </ul>
-            
-            
-              <form class="form-inline " action="Loginsignup">
-              <span style="color: white; margin-right : 50px;">Welcome ${name}!!</span>
-	<button class="btn btn-success my-2 my-sm-0" type="submit" name="login" value="logout">LOGOUT</button>
+	</ul>
+
+
+	<form class="form-inline " action="Loginsignup">
+		<span style="color: white; margin-right: 50px;">Welcome
+			${name}!!</span>
+		<button class="btn btn-success my-2 my-sm-0" type="submit"
+			name="login" value="logout">LOGOUT</button>
 
 
 
 
-  </form>
-  
-  
-</nav>
+	</form>
 
 
-	
+	</nav>
+
+
+
 	<div id="logreg-forms">
 		<div class="card text-center">
 			<div class="card-header">Project Presentation</div>
@@ -129,8 +121,8 @@
 			</div>
 		</div>
 
-	</div> 
-<% } %>
+	</div>
+	<% } %>
 
 
 </body>
